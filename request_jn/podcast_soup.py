@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 import csv
 import requests
 import time
-source = requests.get('https://jovemnerd.com.br/nerdcast/').text
 
+source = requests.get('https://jovemnerd.com.br/nerdcast/').text
 soup = BeautifulSoup(source, 'lxml')
 
 # creating csv file
@@ -12,7 +12,6 @@ csv_file = open('nerdcast_scrape.csv', 'w')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Title', 'Summary', 'Link', 'Time'])
 
-# tudo
 for mainpg in soup.find_all('article'):
    
     # episode title
@@ -42,7 +41,7 @@ for mainpg in soup.find_all('article'):
         month = time.strptime(fix_date, "%Y-%m-%d %H:%M:%S").tm_mon
         day = time.strptime(fix_date, "%Y-%m-%d %H:%M:%S").tm_mday
         fix_date = ('%i/%i/%i' %(day, month, year))
-        # print('%i/%i/%i' %(day, month, year))
+        # print(fix_date)
 
     #print()
 
