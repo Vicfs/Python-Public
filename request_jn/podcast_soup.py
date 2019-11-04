@@ -17,19 +17,19 @@ for mainpg in soup.find_all('article'):
    
     # episode title
     title = mainpg.h2.a.text 
-    print(title)
+    # print(title)
 
     # episode summary
     summary = mainpg.find('p', class_="entry-card__content-excerpt").text
     summary_split = summary.split('Clique para continuar lendo')[0]
     summary_split = summary_split.split(':')[1]
-    print(summary_split)
+    # print(summary_split)
 
     # episode page link
     link = mainpg.h3.p
     link = mainpg.find('a', href=True)
     link = link['href']
-    print(link)
+    # print(link)
 
     # printing date and time
     time_date = mainpg.find('time')
@@ -42,9 +42,9 @@ for mainpg in soup.find_all('article'):
         month = time.strptime(fix_date, "%Y-%m-%d %H:%M:%S").tm_mon
         day = time.strptime(fix_date, "%Y-%m-%d %H:%M:%S").tm_mday
         fix_date = ('%i/%i/%i' %(day, month, year))
-        print('%i/%i/%i' %(day, month, year))
+        # print('%i/%i/%i' %(day, month, year))
 
-    print()
+    #print()
 
     csv_writer.writerow([title, summary_split, link, fix_date])
 
