@@ -1,1 +1,5 @@
-Needs a proper creds.json file to work.
+Requires a file named creds.json in the following format:
+{
+     "user": "XXX",
+     "password": "YYY"
+}
