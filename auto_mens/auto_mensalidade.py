@@ -16,7 +16,6 @@ matric = browser.find_element_by_name('alumat')
 matric.send_keys('', credentials['login'])
 passw = browser.find_element_by_name('pass')
 passw.send_keys('', credentials['password'])
-pfile.close()
 
 # entering intended page.
 browser.find_element_by_xpath("//select[@name='unidade']/option[text()='Universidade Presbiteriana Mackenzie (campus Higienópolis)']").click()

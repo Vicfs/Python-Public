@@ -1,1 +1,0 @@
-Generates a CSV with some scraped data from https://jovemnerd.com.br/nerdcast/
