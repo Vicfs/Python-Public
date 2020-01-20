@@ -25,12 +25,14 @@ async def dice(ctx):
     await ctx.channel.send(f"Dice roll: {random.randint(1, 6)}")
 
 
+# pre-defined message
 async def send_callback(ctx):
     if ctx.author == bot.user:
         return
     await ctx.channel.send(commands_dict[ctx.command.qualified_name]["text"])
 
 
+# random message within choices
 async def random_send_callback(ctx):
     if ctx.author == bot.user:
         return
@@ -39,6 +41,7 @@ async def random_send_callback(ctx):
     )
 
 
+# plays mp3 file (same name as ctx)
 async def audio_callback(ctx):
     if ctx.message.author.voice == None:
         return
